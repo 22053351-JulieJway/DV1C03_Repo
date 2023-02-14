@@ -30,7 +30,7 @@ pipeline {
             steps {
                 sh """
                 env
-		echo "S1_22053351"
+		echo "S1_22053351:Environment Prepartion Completed"
                 """
             }
         }
