@@ -41,7 +41,6 @@ pipeline {
             steps {
 		sh 'sudo docker rm -f 22053351_servertest'
 		sh 'sudo docker run -d -it --name=22053351_servertest 22053351_webimage /bin/sh'
-		echo "22053351" | sudo -S service nginx restart
 		echo "S2_22053351:Web Server Creation Completed"
 		}
 }
