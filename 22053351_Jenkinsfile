@@ -39,8 +39,9 @@ pipeline {
 
 	  stage('Stage 2_22053351') {
             steps {
+	    	sh 'docker rm -f 22053351_servertest'
 		sh 'docker run -d -it -p 42000:80 --name=22053351_servertest 22053351_webimage /bin/sh'
-		sh 'docker rm -f 22053351_servertest'
+		
 		
 		echo "S2_22053351:Web Server Creation Completed"
 		}
