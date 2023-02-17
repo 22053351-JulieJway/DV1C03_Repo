@@ -47,7 +47,7 @@ pipeline {
 		}
 }
 
-	stage('Stage 3 and Stage 4') {
+	stage('Environment Analysis') {
 
 
 
@@ -78,6 +78,14 @@ pipeline {
 
 	}
 }
+
+
+     stage('Stage 5_22053351') {
+            steps {
+		input('Do you want to release the work?')
+               
+            }
+        }
 
 
 	
