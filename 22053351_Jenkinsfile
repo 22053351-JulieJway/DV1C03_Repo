@@ -1,5 +1,13 @@
 pipeline {
 
+	agent any
+	parameters {
+	choice (
+		choices: ['Proceed', 'Abort'],
+		description: '',
+		name: 'Do you want to release the work?')
+
+
     agent {
         node {
             label 'master'
@@ -80,12 +88,26 @@ pipeline {
 }
 
 
+
+
+
      stage('Stage 5_22053351') {
             steps {
 		input('Do you want to release the work?')
                
             }
         }
+
+
+     stage('Stage 6_22053351') {
+            when {
+		express {params.Do you want to release the work? == 'Proceed'}
+               
+            }
+		steps {
+			echo "Work Released - 2203351"
+        }
+}
 
 
 	
