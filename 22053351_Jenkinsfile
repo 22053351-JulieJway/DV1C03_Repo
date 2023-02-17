@@ -47,9 +47,8 @@ pipeline {
 		}
 }
 
-	parallel {
 
-      stage('Stage 3_22053351') {
+	      stage('Stage 3_22053351') {
             steps {
                 sh """
                 env
@@ -57,6 +56,11 @@ pipeline {
                 """
             }
         }
+
+
+	parallel {
+
+
 
 
      stage('Stage 4_22053351') {
