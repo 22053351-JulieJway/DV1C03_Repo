@@ -47,6 +47,7 @@ pipeline {
 		}
 }
 
+	parallel {
 
       stage('Stage 3_22053351') {
             steps {
@@ -56,6 +57,19 @@ pipeline {
                 """
             }
         }
+
+
+     stage('Stage 4_22053351') {
+            steps {
+                sh """
+                env
+		echo "S4_22053351:DAST Security Test Completed"
+                """
+            }
+        }
+
+
+	}
 
 
 	
