@@ -47,6 +47,12 @@ pipeline {
 		}
 }
 
+	stage('Environment Analysis') {
+
+
+
+	parallel {
+
 
 	      stage('Stage 3_22053351') {
             steps {
@@ -56,9 +62,6 @@ pipeline {
                 """
             }
         }
-
-
-	parallel {
 
 
 
@@ -74,6 +77,7 @@ pipeline {
 
 
 	}
+}
 
 
 	
