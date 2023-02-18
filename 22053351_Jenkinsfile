@@ -49,7 +49,7 @@ pipeline {
 		}
 }
 
-	stage('Stage 3 and Stage 4') {
+	stage('Parallel') {
 
 
 
