@@ -86,6 +86,7 @@ pipeline {
             steps {
 		script {
 			def choice = "${params.CHOICE}"
+			input('Do you want to release the work?')
 			}
                
             }
