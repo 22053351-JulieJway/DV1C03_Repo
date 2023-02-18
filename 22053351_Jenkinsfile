@@ -91,7 +91,7 @@ pipeline {
      stage('Stage 6_22053351') {
 	steps {
 	script {
-		if (env.BRANCH_NAME == 'Proceed'){
+		if (env.INPUT == 'Proceed'){
 			sh """
                 	env
 			echo "Work Released - 22053351"
