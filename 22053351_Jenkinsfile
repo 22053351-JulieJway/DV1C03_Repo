@@ -1,6 +1,10 @@
 pipeline {
 
     agent {
+	parameters {
+		choice(name: 'CHOICE', choices: ['Proceed', 'Abort'], description: 'Do you want to release the work?')
+		}
+
         node {
             label 'master'
         }
@@ -82,7 +86,9 @@ pipeline {
 
      stage('Stage 5_22053351') {
             steps {
-		input('Do you want to release the work?')
+		script {
+			def choice = "${params.CHOICE}"
+			}
                
             }
         }
@@ -91,7 +97,8 @@ pipeline {
      stage('Stage 6_22053351') {
 	steps {
 	script {
-		if (env.INPUT == 'Proceed'){
+		def choice = "${params.CHOICE}"
+		if choice == "Proceed") {
 			sh """
                 	env
 			echo "Work Released - 22053351"
