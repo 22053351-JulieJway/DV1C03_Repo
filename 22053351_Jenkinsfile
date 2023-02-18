@@ -98,7 +98,7 @@ pipeline {
 	steps {
 	script {
 		def choice = "${params.CHOICE}"
-		if choice == "Proceed") {
+		if (choice == "Proceed") {
 			sh """
                 	env
 			echo "Work Released - 22053351"
