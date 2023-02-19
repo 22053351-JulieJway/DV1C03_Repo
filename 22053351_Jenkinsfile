@@ -86,7 +86,7 @@ pipeline {
      stage('Stage 5_22053351') {
             steps {
 		script {
-			//def choice = "${params.CHOICE}"
+			
 			def success = true
 			input('Do you want to release the work?')
 			}
@@ -98,7 +98,6 @@ pipeline {
      stage('Stage 6_22053351') {
 	steps {
 	script {
-		//def choice = "${params.CHOICE}"
 		def success = true
 
 		if (success){
