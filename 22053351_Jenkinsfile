@@ -1,13 +1,10 @@
 pipeline {
 
-      agent {
+    agent {
         node {
             label 'master'
         }
     }
-
-      
-    
 
     tools { 
         maven 'maven3' 
@@ -50,7 +47,7 @@ pipeline {
 		}
 }
 
-	stage('Parallel') {
+	stage('Stage 3 and Stage 4') {
 
 
 
@@ -85,10 +82,7 @@ pipeline {
 
      stage('Stage 5_22053351') {
             steps {
-		script {
-			def choice = "${params.CHOICE}"
-			input('Do you want to release the work?')
-			}
+		input('Do you want to release the work?')
                
             }
         }
@@ -97,8 +91,7 @@ pipeline {
      stage('Stage 6_22053351') {
 	steps {
 	script {
-		def choice = "${params.CHOICE}"
-		if (choice == "Proceed") {
+		if (env.INPUT == 'Proceed'){
 			sh """
                 	env
 			echo "Work Released - 22053351"
