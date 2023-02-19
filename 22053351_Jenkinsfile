@@ -1,9 +1,10 @@
 pipeline {
 
-    agent any 
-	parameters {
-		choice(name: 'CHOICE', choices: ['Proceed', 'Abort'], description: 'Do you want to release the work?')
-		}
+      agent {
+        node {
+            label 'master'
+        }
+    }
 
       
     
