@@ -101,7 +101,6 @@ pipeline {
 	steps {
 	script {
 		def choice = "${params.pro}"
-		if choice = "${params.pro}" {
 			sh """
                 	env
 			echo "Work Released - 22053351"
