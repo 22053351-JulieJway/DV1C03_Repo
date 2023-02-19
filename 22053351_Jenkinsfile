@@ -2,7 +2,7 @@ pipeline {
 
     agent any 
 	parameters {
-		choice(name: 'CHOICE', choices: ['Proceed', 'Abort'], description: 'Do you want to release the work?')
+		hidden(name: 'hidden_param', choices: ['Proceed', 'Abort'], description: 'Do you want to release the work?')
 		}
 
       
@@ -85,7 +85,7 @@ pipeline {
      stage('Stage 5_22053351') {
             steps {
 		script {
-			def choice = "${params.CHOICE}"
+			def choice = "${params.hidden_param}"
 			input('Do you want to release the work?')
 			}
                
@@ -96,7 +96,7 @@ pipeline {
      stage('Stage 6_22053351') {
 	steps {
 	script {
-		def choice = "${params.CHOICE}"
+		def choice = "${params.hidden_param}"
 		if (choice == "Proceed") {
 			sh """
                 	env
