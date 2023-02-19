@@ -100,7 +100,7 @@ pipeline {
      stage('Stage 6_22053351') {
 	steps {
 	script {
-		def choice = "${params.pro}"
+		if def choice = "${params.pro}" {
 			sh """
                 	env
 			echo "Work Released - 22053351"
