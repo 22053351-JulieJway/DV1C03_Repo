@@ -2,7 +2,7 @@ pipeline {
 
     agent any 
 	parameters {
-		hidden(name: 'hidden_param', choices: ['Proceed', 'Abort'], description: 'Do you want to release the work?')
+		hidden(name: 'hidden_param', defaultValue: 'hidden_value', description: 'Do you want to release the work?')
 		}
 
       
