@@ -83,7 +83,7 @@ pipeline {
 
 
      stage('Stage 5_22053351') {
-            steps {
+         
 			def userInput = "input ("
 			id: 'userInput', message: 'Do you want to release the work?', parameters: [
 			[$class: 'TextParameterDefinition', defaultValue:'Proceed', description:'Proceed', name:'pro'],
@@ -91,7 +91,7 @@ pipeline {
 			])
 			
 
-			}
+			
                
             }
         
