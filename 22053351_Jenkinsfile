@@ -2,7 +2,7 @@ pipeline {
 
     agent any 
 	parameters {
-		hidden(name: 'hidden_param', defaultValue: 'hidden_value', description: 'Hidden parameter')
+		choice(name: 'CHOICE', choices: ['Proceed', 'Abort'], description: 'Do you want to release the work?')
 		}
 
       
@@ -82,30 +82,27 @@ pipeline {
 }
 
 
-     stage('Stage 5_22053351') 
-         
-			def userInput = input (
-			id: 'userInput', message: 'Do you want to release the work?', parameters: [
-			[$class: 'TextParameterDefinition', defaultValue:'Proceed', description:'Proceed', name:'pro'],
-			[$class: 'TextParameterDefinition', defaultValue:'Abort', description:'Abort', name:'abo']
-			])
-			
-
-			
+     stage('Stage 5_22053351') {
+            steps {
+		script {
+			def choice = "${params.CHOICE}"
+			input('Do you want to release the work?')
+			}
                
-            
-        
+            }
+        }
 
 
      stage('Stage 6_22053351') {
 	steps {
 	script {
-		def choice = "${params.pro}" {
+		def choice = "${params.CHOICE}"
+		if (choice == "Proceed") {
 			sh """
                 	env
 			echo "Work Released - 22053351"
 			  """
-		
+		}else{
 			
 			}
 	
